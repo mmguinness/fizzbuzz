@@ -8,10 +8,15 @@ require_relative '../lib/fizzbuzz'
 #        number = '15'
 #        multiple = '3'
 
+describe 'fizzbuzz' do
+  it 'returns "fizzbuzz" when passed multiples of 3 or 5' do
+    expect(fizzbuzz(15)).to eq 'fizzbuzz'
+  end
+end
 
 describe 'fizzbuzz' do
   it 'returns "fizz" when passed multiples of 3' do
-    expect(fizzbuzz(% 3 == 0)).to eq 'fizz'
+    expect(fizzbuzz(3)).to eq 'fizz'
   end
 end
 
@@ -22,7 +27,8 @@ describe 'fizzbuzz' do
 end
 
 describe 'fizzbuzz' do
-  it 'returns "fizzbuzz" when passed multiples of 3 or 5' do
-    expect(fizzbuzz(3 && 5)).to eq 'fizzbuzz'
-  end
+    it 'returns "number" when passed a number that isnt a multiple of 3 and/or 5' do
+        expect(fizzbuzz(4)).to eq 4
+    end
 end
+
